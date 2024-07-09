@@ -14,8 +14,7 @@ class Login(LoginTemplate):
     def button_1_click(self, **event_args):
         """This method is called when the button is clicked"""
         email_user = self.email_textbox.text.strip()
-        user_password = self.password_textbox.text.strip()
-        
+        user_password = self.password_textbox.text.strip()      
         user = anvil.server.call('get_user', email_user, user_password)
         
         if user:
@@ -27,19 +26,6 @@ class Login(LoginTemplate):
         else:
           alert('no user found')
           
-            # Define a mapping from user_type to form names
-        #     user_type_to_form = {
-        #         "admin": "Admin",
-        #         "employee": "Employee"
-        #     }
-        #     form_name = user_type_to_form.get(user_type)
-            
-        #     if form_name:
-        #         open_form(form_name,user)
-        #     else:
-        #         alert("Invalid user type detected.")
-        # else:
-        #     alert("Incorrect email or password.")
 
 
         

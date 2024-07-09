@@ -11,4 +11,15 @@ class Admin(AdminTemplate):
 
     # Any code you write here will run before the form opens.
 
+    """This method is called when the button is clicked"""
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('clear_user_session')
+    open_form('Login')
+    
+
+
+
+
   

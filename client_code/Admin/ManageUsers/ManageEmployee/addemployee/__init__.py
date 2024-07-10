@@ -39,7 +39,7 @@ class addemployee(addemployeeTemplate):
       return
 
     try:
-      user_phonenumber = int(user_phonenumber)  # Convert phone to int after validation
+      user_phonenumber = str(user_phonenumber)  # Convert phone to int after validation
     except ValueError:
       Notification("Invalid phone number format").show()
       return

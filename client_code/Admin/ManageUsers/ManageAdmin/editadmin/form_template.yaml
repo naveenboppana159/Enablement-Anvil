@@ -18,6 +18,6 @@ components:
   name: label_1
   layout_properties: {slot: title}
 - type: RepeatingPanel
-  properties: {item_template: Admin.ManageUsers.ManageAdmin.editadmin.ItemTemplate5}
+  properties: {item_template: Admin.ManageUsers.ManageAdmin.editadmin.ItemTemplate7}
   name: repeating_panel_1
   layout_properties: {slot: default}

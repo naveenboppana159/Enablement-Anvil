@@ -7,11 +7,14 @@ class addemployee(addemployeeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    # self.text_box_password.text = anvil.server.call('load_secret_data')
 
     # Any code you write here will run before the form opens.
 
   def link_1_click(self, **event_args):
     open_form('Admin.ManageUsers.ManageEmployee')
+#to call the encrption for user_password and re-enter password 
+    self.text_box_password.text = anvil.server.call('load_secret_data')
 
   def button_1_click(self, **event_args):
     full_name=self.text_box_name.text
@@ -19,6 +22,7 @@ class addemployee(addemployeeTemplate):
     user_phonenumber=self.text_box_phonenumber.text
     user_password = self.text_box_password.text
     reenter_password = self.text_box_reenterpassword.text
+
     
     
 # Input validation
@@ -58,14 +62,5 @@ class addemployee(addemployeeTemplate):
     except Exception as e:
       Notification(f"An error occurred: {str(e)}").show()
 
-def show_users(self):
-    """Fetch and display user details"""
-    try:
-      users = anvil.server.call('get_users')
-      for user in users:
-        # Display user details here, using a fixed string of dots for the password fields
-        print(f"Name: {user['full_name']}, Email: {user['email_user']}, Phone: {user['user_phonenumber']}, Password: {'•' * 8}")
-        
-    except Exception as e:
-      Notification(f"An error occurred: {str(e)}").show()
+
 

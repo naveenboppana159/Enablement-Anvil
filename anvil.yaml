@@ -40,6 +40,6 @@ db_schema:
       type: string
 startup: {type: form, module: Admin.ManageUsers.ManageEmployee}
 secrets:
-  secret_keys:
+  secret_key:
     type: key
-    value: {FE6WHWCUT25MOFOM: H/xf+8TeDI+zi9iDv57NxY31PsvshzUNBPjEUzDBUEUr07t1ZQT5qQ5hw3t9brJtaOkMSCMzzj16K3pDDzpbk5/pY1WyAE0MWK31bCLXPSesLVIEht67KwdIRZN6jx7oGX/zGR32VTcOED3YhhSClledRU5bWzQ=}
+    value: {FE6WHWCUT25MOFOM: ZGOeI/HJb7jX845HAihRUthNkvD79jDFQ4xk6sVX0T2F5JsC12tdqOncPkDlZ67I5iSimn7uTF9hbZ9F7zY34K5K4rmLm6yuoPVIoVXDNzqJCNodL6gOGz1CgCVIfApi1VYOUYL+9bcTtHmSrbZSDrHtPekmK8Y=}

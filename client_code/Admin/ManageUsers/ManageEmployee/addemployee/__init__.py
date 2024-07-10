@@ -46,7 +46,7 @@ class addemployee(addemployeeTemplate):
 
     # Server call from servermodule1_addemployee
     try:
-      anvil.server.call('submit', full_name=full_name, email_user = email_user, user_phonenumber=  user_phonenumber,user_password = user_password,reenter_password = reenter_password)
+      anvil.server.call('submit', full_name=full_name, email_user = email_user, user_phonenumber= user_phonenumber,user_password = user_password,reenter_password = reenter_password)
       Notification("Your employee details have been saved!!!").show()
     # Clear form fields
       self.text_box_name.text = ""
@@ -56,6 +56,6 @@ class addemployee(addemployeeTemplate):
       self.text_box_reenterpassword.text = ""
       
     except Exception as e:
-      Notification("An error occurred:",e).show()
+      Notification(f"An error occurred: {str(e)}").show()
 
 

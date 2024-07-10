@@ -7,7 +7,7 @@ class editadmin(editadminTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.repeating_panel_1.items = app_tables.users.search(user_type='admin')
+    self.repeating_panel_1.items = app_tables.admin.search(usertype='admin')
 
     # Any code you write here will run before the form opens.
 

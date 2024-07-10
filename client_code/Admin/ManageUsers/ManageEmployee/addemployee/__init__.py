@@ -58,4 +58,14 @@ class addemployee(addemployeeTemplate):
     except Exception as e:
       Notification(f"An error occurred: {str(e)}").show()
 
+def show_users(self):
+    """Fetch and display user details"""
+    try:
+      users = anvil.server.call('get_users')
+      for user in users:
+        # Display user details here, using a fixed string of dots for the password fields
+        print(f"Name: {user['full_name']}, Email: {user['email_user']}, Phone: {user['user_phonenumber']}, Password: {'•' * 8}")
+        
+    except Exception as e:
+      Notification(f"An error occurred: {str(e)}").show()
 

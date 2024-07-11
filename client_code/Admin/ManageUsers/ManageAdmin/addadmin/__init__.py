@@ -22,7 +22,6 @@ class addadmin(addadminTemplate):
     user_password = self.text_box_password.text
     reenter_password = self.text_box_reenter_password.text
     
-    
     # Input validation
     if not (full_name and email_user and user_phonenumber and user_password and reenter_password):
       Notification("Please fill all the fields").show()
@@ -56,6 +55,7 @@ class addadmin(addadminTemplate):
       self.text_box_phone_number.text = ""
       self.text_box_password.text = ""
       self.text_box_reenter_password.text = ""
+      
     except Exception as e:
       Notification(f"An error occurred: {str(e)}").show()
       

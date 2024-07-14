@@ -35,4 +35,4 @@ db_schema:
     - name: user_type
       admin_ui: {width: 200}
       type: string
-startup: {type: form, module: Admin.ManageUsers.ManageAdmin.editadmin}
+startup: {type: form, module: Admin.ManageUsers.ManageAdmin}

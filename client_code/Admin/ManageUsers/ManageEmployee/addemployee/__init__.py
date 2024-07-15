@@ -7,11 +7,14 @@ class addemployee(addemployeeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    # self.text_box_password.text = anvil.server.call('load_secret_data')
 
     # Any code you write here will run before the form opens.
 
   def link_1_click(self, **event_args):
     open_form('Admin.ManageUsers.ManageEmployee')
+#to call the encrption for user_password and re-enter password 
+    self.text_box_password.text = anvil.server.call('load_secret_data')
 
   def button_1_click(self, **event_args):
     full_name=self.text_box_name.text
@@ -19,6 +22,7 @@ class addemployee(addemployeeTemplate):
     user_phonenumber=self.text_box_phonenumber.text
     user_password = self.text_box_password.text
     reenter_password = self.text_box_reenterpassword.text
+
     
     
 # Input validation
@@ -39,14 +43,14 @@ class addemployee(addemployeeTemplate):
       return
 
     try:
-      user_phonenumber = int(user_phonenumber)  # Convert phone to int after validation
+      user_phonenumber = str(user_phonenumber)  # Convert phone to int after validation
     except ValueError:
       Notification("Invalid phone number format").show()
       return
 
     # Server call from servermodule1_addemployee
     try:
-      anvil.server.call('submit', full_name=full_name, email_user = email_user, user_phonenumber=  user_phonenumber,user_password = user_password,reenter_password = reenter_password)
+      anvil.server.call('submit', full_name=full_name, email_user = email_user, user_phonenumber= user_phonenumber,user_password = user_password,reenter_password = reenter_password)
       Notification("Your employee details have been saved!!!").show()
     # Clear form fields
       self.text_box_name.text = ""
@@ -56,6 +60,7 @@ class addemployee(addemployeeTemplate):
       self.text_box_reenterpassword.text = ""
       
     except Exception as e:
-      Notification("An error occurred:",e).show()
+      Notification(f"An error occurred: {str(e)}").show()
+
 
 

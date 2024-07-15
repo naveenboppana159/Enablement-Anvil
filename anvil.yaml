@@ -38,8 +38,3 @@ db_schema:
     - name: user_type
       admin_ui: {width: 200}
       type: string
-startup: {type: form, module: Admin.ManageUsers.ManageEmployee}
-secrets:
-  secret_key:
-    type: key
-    value: {FE6WHWCUT25MOFOM: ZGOeI/HJb7jX845HAihRUthNkvD79jDFQ4xk6sVX0T2F5JsC12tdqOncPkDlZ67I5iSimn7uTF9hbZ9F7zY34K5K4rmLm6yuoPVIoVXDNzqJCNodL6gOGz1CgCVIfApi1VYOUYL+9bcTtHmSrbZSDrHtPekmK8Y=}
